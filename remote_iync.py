@@ -41,8 +41,8 @@ def create_file_list( args, config ):
 				+ config['main']['source_path'] + "/.rsync_selection_list")
 		os.system("scp "
 				+ config['remote']['user'] + "@" + config['remote']['ip']
-				+ ":" + config['main']['source_path'] + "/.rsync_selection_list"
-				+ " ./" + config['main']['file_list'])
+				+ ":" + config['main']['source_path'] + "/.rsync_selection_list "
+				+ config['main']['file_list'])
 
 	# print a list of files
 	# if args.verbose >= 3 :
