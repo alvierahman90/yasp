@@ -193,6 +193,9 @@ def main():
 
 	args = parser.parse_args()
 
+	if args.create_file_list:
+		create_file_list(args, config)
+
 	if not args.loop:
 		print("Not set to listen... ")
 		sync( args, config, create_to_sync_list(args, config))
