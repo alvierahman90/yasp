@@ -188,7 +188,7 @@ def main():
 
 	parser.add_argument("-i", "--loop-interval"
 		, type=int
-		, default=config['loop']['interval']
+		, default=60
 		, help="Change the interval between loops in seconds.\nDefaults to what is stated in config file.")
 
 	args = parser.parse_args()
