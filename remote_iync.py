@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 import argparse
-import configparser
 import os
 
 
 #DONE
 def load_config( config_filename ):
+	import configparser
 	config = configparser.ConfigParser()
 	config.read(config_filename)
 	return config
