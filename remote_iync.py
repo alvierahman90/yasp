@@ -167,10 +167,10 @@ def main():
 		, default=False
 		, help="TODO - Retrieves up to date version of file list and merges with current to sync list then quits")
 
-	parser.add_argument("-l", "--loop"
-		, action="store_true"
-		, default=False
-		, help="Run as constant loop")
+	parser.add_argument("-l", "--not-loop"
+		, action="store_false"
+		, default=True
+		, help="Run once")
 
 	parser.add_argument("-i", "--loop-interval"
 		, type=int
