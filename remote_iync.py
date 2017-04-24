@@ -2,7 +2,7 @@
 
 import argparse
 import os
-import sys
+
 
 #DONE
 def load_config( config_filename ):
@@ -10,20 +10,14 @@ def load_config( config_filename ):
 	config = configparser.ConfigParser()
 	config.read(config_filename)
 	return config
-
-
 #TODO validate config
 def validate_config( config ):
 	pass
 
-
-#DONE
 def write_config( config, config_filename ):
 	with open(config_filename,"w") as file:
 		config.write(file)
 
-
-#DONE
 def create_file_list( args, config ):
 	# generate file list
 	if config['remote']['remote'] == "disabled" or config['remote']['remote'] == "destination" :
@@ -51,14 +45,10 @@ def create_file_list( args, config ):
 		# print("Files in source:")
 		# for i in range(len(files_in_source)) :
 		#	print(files_in_source[i])
-
-
 #TODO merge lists
 def merge_list( args, list_1, list_2):
 	pass # application does not delete files yet. Do not need to merge
 
-
-#DONE create sync list
 def create_to_sync_list( args, config ):
 	with open(config['main']['file_list']) as file:
 		file_list = file.read()
@@ -74,8 +64,6 @@ def create_to_sync_list( args, config ):
 			pass
 	return sync_list
 
-
-#DONE actual syncing
 def sync( args, config_file, sync_list ):
 	if config_file['remote']['remote'] == "disabled" :
 		for i in range(len(sync_list)) :
@@ -138,8 +126,6 @@ def sync( args, config_file, sync_list ):
 				          + ":"
 				          + config_file['main']['destination_path'])
 
-
-#TODO listen loop
 def loop( args, config):
 	from hashlib import sha256
 	from time import gmtime, sleep, strftime
@@ -203,7 +189,8 @@ def main():
 		try:
 			loop(args, config)
 		except KeyboardInterrupt:
-			sys.exit()
+			print('\n')
+
 
 if __name__ == '__main__' :
 	main()
