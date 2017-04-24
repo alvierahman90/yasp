@@ -1,15 +1,15 @@
 # yasp
 Yet Another Syncing Program (based on rsync)
 ## Installation
-1. Add `yasp.py` to you bin
-  * Copy it to `~/bin` (assuming `~/bin` is in your path)
-  * Copy it to `/bin` (requires root)
+1. Add `yasp.py` to your bin
+    * Copy it to `~/bin` (assuming `~/bin` is in your path)
+    * Copy it to `/bin` (requires root)
 2. Create the file `.yasprc` in your home directory. It should look something like this:
 ``` ini
 [main]
 source_path = /home/user/tv_shows
 destination_path = /home/user/video_files
-rsync_options = --progress --recursive
+rsync_options = --progress --recursive # any extra options wanted. --recursive is recommended
 file_list = /home/user/.yasp_files # this is the list of files which will be synced
 
 [remote]
