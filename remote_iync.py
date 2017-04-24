@@ -2,7 +2,7 @@
 
 import argparse
 import os
-
+import sys
 
 #DONE
 def load_config( config_filename ):
@@ -200,8 +200,10 @@ def main():
 		print("Not set to listen... ")
 		sync( args, config, create_to_sync_list(args, config))
 	else:
-		loop(args, config)
-
+		try:
+			loop(args, config)
+		except KeyboardInterrupt:
+			sys.exit()
 
 if __name__ == '__main__' :
 	main()
