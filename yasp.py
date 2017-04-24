@@ -145,7 +145,7 @@ def loop( args, config):
 		sleep(float(config['loop']['interval']))
 
 def main():
-	config = load_config( "remote_iync.ini" )
+	config = load_config( os.path.expanduser('~/.yasprc') )
 
 	validate_config(config)
 
