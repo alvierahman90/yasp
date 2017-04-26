@@ -167,10 +167,10 @@ def main():
 		, default=False
 		, help="TODO - Retrieves up to date version of file list and merges with current to sync list then quits")
 
-	parser.add_argument("-l", "--not-loop"
-		, action="store_false"
-		, default=True
-		, help="Run once")
+	parser.add_argument("-n", "--not-loop"
+		, action="store_true"
+		, default=False
+		, help="Run once - don't loop")
 
 	parser.add_argument("-i", "--loop-interval"
 		, type=int
@@ -182,7 +182,7 @@ def main():
 	if args.create_file_list:
 		create_file_list(args, config)
 
-	if not args.loop:
+	if args.not_loop:
 		print("Not set to listen... ")
 		sync( args, config, create_to_sync_list(args, config))
 	else:
