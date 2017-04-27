@@ -1,5 +1,5 @@
 # yasp
-Yet Another Syncing Program (based on rsync)
+Yet Another Syncing Program (this one's based on rsync)
 ## Installation
 1. Add `yasp.py` to your bin
     * Copy it to `~/bin` (assuming `~/bin` is in your path)
